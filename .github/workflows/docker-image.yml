@@ -36,11 +36,15 @@ jobs:
         echo "Termina Login"
         
     - name: Build Dokcer Image
+      env:
+        NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
-        docker build --tag rpacheco26/docker-graphql:0.0.10 . 
+        docker build --tag rpacheco26/docker-graphql:$NEW_VERSION .
         docker build --tag rpacheco26/docker-graphql:latest . 
         
     - name: Push Dokcer Image
+      env:
+        NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
         docker push rpacheco26/docker-graphql:$NEW_VERSION
         docker push rpacheco26/docker-graphql:latest
