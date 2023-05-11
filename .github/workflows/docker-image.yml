@@ -27,10 +27,12 @@ jobs:
         echo "Termina Login"
     - name: Build Dokcer Image
       run: |
-        docker build --tag rpacheco26/docker-graphql:0.0.1 . 
+        docker build --tag rpacheco26/docker-graphql:0.0.2 . 
+          docker build --tag rpacheco26/docker-graphql:latest . 
         
     - name: Push Dokcer Image
       run: |
-        docker push rpacheco26/docker-graphql:0.0.1
+        docker push rpacheco26/docker-graphql:0.0.2
+        docker push rpacheco26/docker-graphql:latest
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
