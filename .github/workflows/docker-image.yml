@@ -35,16 +35,15 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Termina Login"
         
-        echo "Version $NEW_VERSION !!!!"
-#    - name: Build Dokcer Image
-#      run: |
-#        docker build --tag rpacheco26/docker-graphql:0.0.2 . 
-#          docker build --tag rpacheco26/docker-graphql:latest . 
+    - name: Build Dokcer Image
+      run: |
+        docker build --tag rpacheco26/docker-graphql:$NEW_VERSION . 
+          docker build --tag rpacheco26/docker-graphql:latest . 
         
-#    - name: Push Dokcer Image
-#      run: |
-#        docker push rpacheco26/docker-graphql:0.0.2
-#        docker push rpacheco26/docker-graphql:latest
+    - name: Push Dokcer Image
+      run: |
+        docker push rpacheco26/docker-graphql:$NEW_VERSION
+        docker push rpacheco26/docker-graphql:latest
         
         
 #    - name: Build the Docker image
