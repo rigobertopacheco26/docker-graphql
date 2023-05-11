@@ -37,7 +37,7 @@ jobs:
         
     - name: Build Dokcer Image
       run: |
-        docker build --tag rpacheco26/docker-graphql:$NEW_VERSION . 
+        docker build --tag rpacheco26/docker-graphql:0.0.10 . 
         docker build --tag rpacheco26/docker-graphql:latest . 
         
     - name: Push Dokcer Image
