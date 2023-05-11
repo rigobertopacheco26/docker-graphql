@@ -21,7 +21,7 @@ jobs:
       uses: PaulHatch/semantic-version@v4.0.3
       with:
         major_pattern: "major:"
-        menor_pattern: "feat:"
+        minor_pattern: "feat:"
         format: "${major}.${minor}.${patch}-prerelease${increment}"
       id: version
           
